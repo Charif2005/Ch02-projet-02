@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+
+    --red : hsl(0, 100%, 68%);
+
+    --Very-Dark-Blue: hsl(230, 29%, 20%);
+    --Dark-Grayish-Blue: hsl(230, 11%, 40%);    
+    --Grayish-Blue: hsl(231, 7%, 65%);
+    --Light-Grayish-Blue: hsl(207, 33%, 95%);
+
+    --hading: 'Barlow Condensed', sans-serif;
+    --body-font-famelly : 'Barlow', sans-serif;
+
+    --font-size : 18px ;
+
+    --size : 50vw;
+}
+
+body{
+    font-family: var(--hading);
+    font-size: var(--font-size);
+    color: var(--Grayish-Blue);
+    text-transform: uppercase;
+}
+
+.heder{
+    display: flex;
+    justify-content: space-between;
+}
+
+.heder ul{
+    display: flex;
+}
+
+.heder ul li{
+    list-style: none;
+    margin-left: 40px;
+    z-index: 1;
+    font-family: var(--hading);
+    color: var(--Dark-Grayish-Blue);
+    font-weight: 700;
+    transition: 0.3s all;
+    cursor: pointer;
+}
+
+.heder ul :nth-child(3){
+    margin-right: 60px;
+}
+
+.heder ul :last-child{
+    color: var(--Grayish-Blue);
+}
+
+.heder ul li:hover{
+    text-decoration: underline;
+}
+
+.heder #icon{
+    display: none;
+}
+
+.container{
+    
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    padding: 50px 100px 0px;
+}
+
+.grybac{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    background-color: var(--Light-Grayish-Blue);
+    border-bottom-left-radius: 80px;
+}
+
+.devise-img{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 30%;
+    right: 0;
+    background-image: url(./images/illustration-devices.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.mainText{
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+.mainText p,h1{
+    margin-bottom: 25px;
+}
+
+.mainText :nth-child(1){
+    letter-spacing: 5px;
+}
+
+.mainText :nth-child(1) span{
+    margin-right: 10px;
+    padding: 10px 15px;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.mainText :nth-child(2){
+    font-size: 65px;
+    color: black;
+    font-weight: 700;
+} 
+
+.mainText :nth-child(3){
+    margin-bottom: 50px;
+    font-family: var(--body-font-famelly);
+    text-transform: capitalize;
+}
+
+.mainText :nth-child(4) span{
+    margin-right: 15px;
+    padding: 15px 25px;
+    background-color: var(--red);
+    color: white;
+    border-radius: 5px;
+    font-weight: 400;
+    transition: 0.3s;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.mainText :nth-child(4) span:hover{
+    opacity: 0.7;
+}
+
+@media (max-width: 375px){
+
+    body{
+        overflow-x: hidden;
+    }
+    .container{
+        height: 300vw;
+        width: 100vw;
+        padding: 20px ;
+    }
+
+    .devise-img{
+    width: 100%;
+    background-size: contain;
+    top: 30vw;
+    }
+
+    .heder ul{
+        background-color: white;
+        height: 150px;
+        width: 80%;
+        flex-direction: column-reverse;
+        z-index: 2;
+        text-align: center;
+        margin-top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        display: none;
+    }
+    .heder ul li{    
+        margin: 0 0 15px;
+        cursor: pointer;
+    }
+
+    .heder ul :nth-child(3){
+        margin-right: 0;
+        padding-bottom: 15px;
+        border: 1px solid ;
+        border-color: transparent transparent var(--Grayish-Blue) transparent;
+    }
+
+    .heder #icon{
+        display: block;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .heder :last-child:hover ul{
+        display: block;
+    }
+
+    .mainText{
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+    }
+}
